@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-warm{
+    background-image: url("./assets/warm-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-cold{
+    background-image: url("./assets/cold-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+main{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .2),rgba(0, 0, 0, .75) );
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+    background-image: linear-gradient(to bottom , rgba(255, 255, 255, .5), rgba(0, 0, 0, .0));
+}
+.header img{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 40px;
+}
+.search-box{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar{
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 50px;
+    font-size: medium;
+    background-color: rgba(255, 255, 255, .75);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .75);
+    
+}
+
+.search-bar:focus{
+    font-size: large;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .55);
+    background-color: rgba(255, 255, 255, 1);
+}
+.weather-continer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-box{ 
+    padding: 30px 50px;
+    background-color: rgba(159, 151, 165, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    border-radius: 10px;
+}
+
+.location{
+    margin-top: 10px;
+    color: #fff;
+    font-size: 37px;
+    font-weight: bold;
+}
+
+.time{
+    margin-top: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+.temp{
+    margin-top: 20px;
+    color: #fff;
+    font-size: 64px;
+    font-weight: bolder;
+}
+
+.weather-type{
+    margin-top: 20px;
+}
+
+.weather-details{
+    padding: 20px 40px;
+    background-color: rgba(159, 151, 165, 0.5);
+    color: #fff;
+    font-size: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 30px;
 }
