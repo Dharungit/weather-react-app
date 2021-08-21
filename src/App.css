@@ -116,6 +116,7 @@ main{
 
 .weather-details{
     padding: 20px 40px;
+    min-width: 250px;
     background-color: rgba(159, 151, 165, 0.5);
     color: #fff;
     margin: 30px;

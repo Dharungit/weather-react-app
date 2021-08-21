@@ -83,6 +83,7 @@ function App() {
           </div>
         </div>
         <div >
+        <div className="weather-continer">
         <div className="weather-details">
             <div className="con1">
               <div className="column1">
@@ -104,6 +105,7 @@ function App() {
             <div className="temp_max">{weather.main.temp_max} ॰C</div>
             </div>
             </div>
+          </div>
           </div>
           </div>
         </div>
