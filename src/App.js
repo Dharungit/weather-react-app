@@ -1,6 +1,11 @@
 import  { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./assets/my logo.png";
+import wind_icon from "./assets/wind.png"
+import hum_icon from "./assets/humidity.png"
+import max_icon from "./assets/max.png"
+import min_icon from "./assets/min.png"
+
 const api = {
   key: "0dbca43bcde3e1a01657b13380517173",
   url: "https://api.openweathermap.org/data/2.5/",
@@ -30,6 +35,8 @@ function App() {
     fetchData();
   }, [lat,long])
 
+
+  // let url= "";
   const search = evt =>{
     if (evt.key === 'Enter') {
       fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
@@ -38,6 +45,9 @@ function App() {
         setWeather(result);
         setQuery("");
         console.log(result);
+        // let icon = weather.weather[0].icon;
+        // console.log(icon);
+        // url = "http://openweathermap.org/img/wn/"+icon+"@2x.png"; 
       });
       }
     }
@@ -67,16 +77,33 @@ function App() {
          <div className="weather-box">
             <div className="location">{weather.name}, {weather.sys.country}</div>
             <div className="time">{getTodaysDate(new Date())}</div>
-            <div className="temp">{Math.round(weather.main.temp)}॰C</div>
+            <div className="temp">{Math.round(weather.main.temp)}°C</div>
             <div className="weather-type location">{weather.weather[0].main}</div>
+            {/* <img src={url} alt="weather-icon"/> */}
           </div>
         </div>
-        <div className="weather-continer">
+        <div >
         <div className="weather-details">
-            <div className="humidity">Humidity : {weather.main.humidity}</div>
-            <div className="temp_max">Max-Temp :{weather.main.temp_max} ॰C</div>
-            <div className="temp_min">Min-Temp :{weather.main.temp_min} ॰C</div>
-            <div className="temp_min">Wind Speed :{weather.wind.speed}</div>
+            <div className="con1">
+              <div className="column1">
+              <div className="humidity">Humidity <img src={hum_icon} alt="icon"/></div>
+              <div className="humidity">{weather.main.humidity}</div>
+              </div>
+              <div className="column2">
+                <div className="wind">Wind Speed <img src={wind_icon} alt="icon"/></div>
+                <div className="wind">{weather.wind.speed}</div>
+              </div>
+            </div>
+            <div className="con2">
+              <div className="column1">
+              <div className="temp_min">Min-Temp <img src={min_icon} alt="icon"/></div>
+              <div className="temp_min">{weather.main.temp_min} ॰C</div>
+              </div>
+            <div className="column2">
+            <div className="temp_max">Max-Temp <img src={max_icon} alt="icon"/></div>
+            <div className="temp_max">{weather.main.temp_max} ॰C</div>
+            </div>
+            </div>
           </div>
           </div>
         </div>
@@ -88,3 +115,8 @@ function App() {
 }
 
 export default App;
+
+
+           
+            
+           
