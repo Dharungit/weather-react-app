@@ -13,7 +13,6 @@ body{
     background-image: url("./assets/warm-bg.svg");
     background-repeat: no-repeat;
     background-size: cover;
-
     
 }
 
@@ -137,3 +136,28 @@ img{
     display: flex;
     justify-content: center;
 }
+
+@media screen and (min-width: 580px) {
+    .App-warm{
+        background-image: url("./assets/warm.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    
+    .App-cold{
+        background-image: url("./assets/cold-d.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .continer{
+        display: flex;
+        justify-content: center;
+    }
+
+    .weather-details{
+        min-width: 400px;
+
+    }
+  }
